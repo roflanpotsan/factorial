@@ -14,6 +14,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 set(config_bin "lib/cmake/${PROJECT_NAME}")
 set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
 set(project_config "${generated_dir}/${PROJECT_NAME}Config.cmake")
+set(TARGETS_EXPORT_NAME "${PROJECT_NAME}")
 
 include(CMakePackageConfigHelpers)
 
@@ -23,8 +24,5 @@ configure_package_config_file(
     INSTALL_DESTINATION "${config_bin}"
 )
 
-install(TARGETS factorial RUNTIME DESTINATION bin)
-install(
-    FILES "${project_config}"
-    DESTINATION "${config_bin}"
-)
+install(TARGETS factorial RUNTIME DESTINATION bin EXPORT "${TARGETS_EXPORT_NAME}")
+install(FILES "${project_config}" DESTINATION "${config_bin}")
