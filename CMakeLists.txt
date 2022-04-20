@@ -11,13 +11,20 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:include>")
 
+set(config_bin "lib/cmake/${PROJECT_NAME}")
+set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
+set(project_config "${generated_dir}/${PROJECT_NAME}Config.cmake")
+
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    "Config.cmake.in"
-    "${PROJECT_NAME}Config.cmake"
-    INSTALL_DESTINATION "lib/cmake/${PROJECT_NAME}"
+    "cmake/Config.cmake.in"
+    "${project_config}"
+    INSTALL_DESTINATION "${config_bin}"
 )
 
 install(TARGETS factorial RUNTIME DESTINATION bin)
-install(FILES "${PROJECT_NAME}Config.cmake" DESTINATION "lib/cmake/${PROJECT_NAME}")
+install(
+    FILES "${project_config}"
+    DESTINATION "${config_bin}"
+)
