@@ -29,3 +29,4 @@ install(TARGETS factorial
 	EXPORT "${TARGETS_EXPORT_NAME}")
 install(FILES "${project_config}"
 	DESTINATION "${config_bin}")
+
