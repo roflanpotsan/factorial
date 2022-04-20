@@ -24,5 +24,8 @@ configure_package_config_file(
     INSTALL_DESTINATION "${config_bin}"
 )
 
-install(TARGETS factorial RUNTIME DESTINATION bin EXPORT "${TARGETS_EXPORT_NAME}")
-install(FILES "${project_config}" DESTINATION "${config_bin}")
+install(TARGETS factorial
+	RUNTIME DESTINATION bin
+	EXPORT "${TARGETS_EXPORT_NAME}")
+install(FILES "${project_config}"
+	DESTINATION "${config_bin}")
