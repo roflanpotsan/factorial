@@ -10,3 +10,5 @@ add_library(${PROJECT_NAME} STATIC src/fact.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:include>")
+
+install(TARGETS factorial RUNTIME DESTINATION bin)
