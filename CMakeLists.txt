@@ -25,8 +25,8 @@ configure_package_config_file(
 )
 
 install(TARGETS factorial
-	RUNTIME DESTINATION bin
-	EXPORT "${TARGETS_EXPORT_NAME}")
+	EXPORT "${TARGETS_EXPORT_NAME}"
+	RUNTIME DESTINATION bin)
 install(FILES "${project_config}"
 	DESTINATION "${config_bin}")
 
