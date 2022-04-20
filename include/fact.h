@@ -1,4 +1,4 @@
-//roflanpotsan
+//roflanpotsan xD
 
 #ifndef FACTORIAL_FACT_H
 #define FACTORIAL_FACT_H
