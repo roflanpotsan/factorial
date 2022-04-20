@@ -28,6 +28,10 @@ install(TARGETS factorial
 	EXPORT "${TARGETS_EXPORT_NAME}"
 	RUNTIME DESTINATION "bin"
 	INCLUDES DESTINATION "include")
+install(
+    FILES "include/fact.h"
+    DESTINATION "include"
+)
 install(EXPORT "${TARGETS_EXPORT_NAME}"
   	FILE "${TARGETS_EXPORT_NAME}.cmake"
   	DESTINATION "${config_bin}")
