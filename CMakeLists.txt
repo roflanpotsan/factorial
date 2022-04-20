@@ -26,7 +26,10 @@ configure_package_config_file(
 
 install(TARGETS factorial
 	EXPORT "${TARGETS_EXPORT_NAME}"
-	RUNTIME DESTINATION bin)
+	RUNTIME DESTINATION "bin")
+install(EXPORT "${TARGETS_EXPORT_NAME}"
+  	FILE "${TARGETS_EXPORT_NAME}.cmake"
+  	DESTINATION "${config_bin}")
 install(FILES "${project_config}"
 	DESTINATION "${config_bin}")
 
